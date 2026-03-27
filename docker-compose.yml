@@ -8,4 +8,4 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - TELEGRAM_BOT_TOKEN=8776486577:AAEwIU6KG7BSg9XyRRPdDMq29a7EvH3D7Us
+      - TELEGRAM_BOT_TOKEN=___________________________________________________________
