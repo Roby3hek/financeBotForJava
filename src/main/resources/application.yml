@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: finance-bot
+
+  # Настройки базы данных
+  datasource:
+    url: jdbc:postgresql://localhost:5432/financebot
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update          # для разработки (в продакшене лучше validate)
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+# JWT настройки
+jwt:
+  secret: super-secret-key-change-in-production-12345678901234567890
+  expiration: 86400000        # 24 часа в миллисекундах
+
+# Telegram Bot — ТОКЕН БЕРЁМ ИЗ ПЕРЕМЕННОЙ ОКРУЖЕНИЯ
+telegram:
+  bot:
+    token: ${TELEGRAM_BOT_TOKEN:}
